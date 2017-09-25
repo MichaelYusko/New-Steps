@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+
+import numpy as np
+import matplotlib as plt
+import pandas as pd
+
+dataset = pd.read_csv('Data.csv')
+print(dataset)
