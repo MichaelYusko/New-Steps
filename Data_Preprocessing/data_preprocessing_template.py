@@ -21,7 +21,7 @@ X[:, 1:3] = imputer.transform(X[:, 1:3])
 label_encoder = LabelEncoder()
 X[:, 0] = label_encoder.fit_transform(X[:, 0])
 
-one_hot_encoder = OneHotEncoder(categorical_features = [0])
+one_hot_encoder = OneHotEncoder(categorical_features=[0])
 X = one_hot_encoder.fit_transform(X).toarray()
 
 label_encoder_Y = LabelEncoder()
