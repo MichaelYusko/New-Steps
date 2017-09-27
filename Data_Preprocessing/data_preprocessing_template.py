@@ -9,7 +9,7 @@ dataset = pd.read_csv('Data.csv')
 X = dataset.iloc[:, :-1].values
 Y = dataset.iloc[:, 3].values
 
-# strategy/axis parameters by default is 'mean' and 0
+# strategy/axis parameters by default are 'mean' and 0
 # But for example, I added both.
 imputer = Imputer(missing_values='NaN', strategy='mean', axis=0)
 imputer = imputer.fit(X[:, 1:3])
