@@ -4,10 +4,11 @@ import numpy as np
 import matplotlib as plt
 import pandas as pd
 from sklearn.preprocessing import Imputer, LabelEncoder, OneHotEncoder
+from sklearn.model_selection import train_test_split
 
 dataset = pd.read_csv('Data.csv')
 X = dataset.iloc[:, :-1].values
-Y = dataset.iloc[:, 3].values
+y = dataset.iloc[:, 3].values
 
 # strategy/axis parameters by default are 'mean' and 0
 # But for example, I added both.
@@ -25,4 +26,7 @@ one_hot_encoder = OneHotEncoder(categorical_features=[0])
 X = one_hot_encoder.fit_transform(X).toarray()
 
 label_encoder_Y = LabelEncoder()
-Y = label_encoder_Y.fit_transform(Y)
+y = label_encoder_Y.fit_transform(y)
+
+# Splitting the dataset into Training set and Test set
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
