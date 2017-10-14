@@ -3,7 +3,6 @@ import scipy as sp
 # Read the file
 data = sp.genfromtxt('web_traffic.tsv', delimiter='\t')
 
-
 # Get vectors
 x = data[:, 0]
 y = data[:, 1]
