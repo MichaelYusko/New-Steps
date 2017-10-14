@@ -93,3 +93,6 @@ ENV/
 .idea
 
 .DS_Store
+
+# Learn files
+f1
