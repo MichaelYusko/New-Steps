@@ -8,7 +8,7 @@ data = sp.genfromtxt('web_traffic.tsv', delimiter='\t')
 x = data[:, 0]
 y = data[:, 1]
 
-sp.sum(sp.isnan(x))
+print("Invalid entries: ", sp.sum(sp.isnan(y)))
 
 # Get only an integers
 x = x[~sp.isnan(y)]
@@ -21,6 +21,10 @@ plt.xlabel('Time')
 plt.ylabel('Hits/hours')
 plt.xticks([w * 7 * 24 for w in range(10)],
             ['week %i' % w for w in range(10)])
+
 plt.autoscale(tight=True)
 plt.grid(True, linestyle='-', color='0.75')
 plt.show()
+
+fp1, residuals, rank, sv, rcond = sp.polyfit(x, y, 1, full=True)
+print("Parameters of model %s" % fp1)
